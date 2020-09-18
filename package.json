@@ -2,6 +2,7 @@
   "name": "funbox",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://yoksel.github.io/funbox",
   "dependencies": {
     "@types/node": "^12.12.59",
     "@types/react": "^16.9.49",
