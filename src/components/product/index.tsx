@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { nanoid } from 'nanoid'
 import { getClassName, formatWeight } from '../../helpers';
 
 import data from '../../data.json';
@@ -136,9 +135,9 @@ function Product({
       dataItems.push({ text: data.common.clientHappy });
     }
 
-    let items = dataItems.map(({ value, unitsText, text }) => {
+    let items = dataItems.map(({ value, unitsText, text }, index) => {
       let valueElement;
-      const id = nanoid();
+      const id = `feature-${index}`;
 
       if ((value && value > 1)) {
         valueElement = <Fragment>

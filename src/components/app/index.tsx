@@ -1,5 +1,4 @@
 import React from 'react';
-import { nanoid } from 'nanoid'
 
 import Card from '../product'
 import { addUnitsText } from '../../helpers';
@@ -9,8 +8,7 @@ import './styles.scss';
 
 function App() {
   const cards = data.items.map(item => {
-    const { taste, gift, weight, quantity, temptation, isClientHappy } = item;
-    const id = nanoid();
+    const { id, taste, gift, weight, quantity, temptation, isClientHappy } = item;
 
     return (
       <Card

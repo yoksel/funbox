@@ -16,6 +16,7 @@
 
   "items": [
     {
+      "id": "fua",
       "taste": "с фуа-гра",
       "weight": {
         "value": 0.5,
@@ -36,6 +37,7 @@
     },
 
     {
+      "id": "fish",
       "taste": "с рыбой",
       "weight": {
         "value": 2,
@@ -56,6 +58,7 @@
     },
 
     {
+      "id": "chicken",
       "taste": "с курой",
       "weight": {
         "value": 5,

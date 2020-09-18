@@ -10,7 +10,6 @@
   flex-grow: 1;
   position: relative;
   z-index: 0;
-  display: flex;
   min-height: 480px;
   margin-bottom: 12px;
   padding: 20px 50px 16px;
@@ -84,9 +83,8 @@
 }
 
 .product__card-inner {
-  position: relative;
   z-index: 1;
-  padding-bottom: 280px;
+  padding-bottom: 265px;
 }
 
 .product__desc {
@@ -112,7 +110,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  line-height: 1.35;
+  line-height: 1.25;
 }
 
 .product__value {
@@ -121,6 +119,7 @@
 
 .product__weight {
   position: absolute;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,8 +128,8 @@
   height: 80px;
   margin-top: auto;
   margin-left: auto;
-  right: -45px;
-  bottom: 0;
+  right: 15px;
+  bottom: 17px;
   border-radius: 50%;
   background: #1698D9;
   text-align: center;
