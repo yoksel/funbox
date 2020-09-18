@@ -1,0 +1,51 @@
+{
+  "name": "funbox",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^12.12.59",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "npm run js:lint && npm run css:lint",
+    "lint:fix": "npm run js:fix && npm run css:fix",
+    "js:lint": "eslint src --ext .ts,.js",
+    "js:fix": "eslint src --ext .ts,.js --fix",
+    "css:lint": "stylelint **/*.scss",
+    "css:fix": "stylelint **/*.scss --fix",
+    "deploy": "npm run build && gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.1.0",
+    "nanoid": "^3.1.12",
+    "stylelint": "^13.0.0",
+    "stylelint-config-standard": "^19.0.0"
+  }
+}

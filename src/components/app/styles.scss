@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Exo';
+  src: url('./fonts/Exo20-Thin.woff2') format('woff2'),
+       url('./fonts/Exo20-Thin.woff') format('woff');
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 40px;
+  box-sizing: border-box;
+  background-color: #000;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,.5),
+      transparent,
+      rgba(0,0,0,.5)
+    ) ,
+    url(./img/bg.png);
+  background-size: cover, auto auto;
+}
+
+.app__title {
+  width: 100%;
+  margin: 0 40px;
+  margin-bottom: 32px;
+  text-align: center;
+  font: 36px/1 Exo, Arial, sans-serif;
+  color: #FFF;
+}

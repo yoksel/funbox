@@ -1,0 +1,79 @@
+{
+  "common": {
+    "name": "Нямушка",
+    "desc": "Сказочное заморское яство",
+    "descSelectedHover": "Котэ не одобряет?",
+    "temptation": "Чего сидишь? Порадуй котэ,",
+    "temptationActionText": "купи.",
+    "clientHappy": "заказчик доволен"
+  },
+
+  "units": {
+    "kg": "кг",
+    "portion": ["порция", "порции", "порций"],
+    "mouse": ["мышь", "мыши", "мышей"]
+  },
+
+  "items": [
+    {
+      "taste": "с фуа-гра",
+      "weight": {
+        "value": 0.5,
+        "units": "kg"
+      },
+      "quantity": {
+        "value": 10,
+        "units": "portion"
+      },
+      "gift": {
+        "value": 1,
+        "units": "mouse"
+      },
+      "temptation": {
+        "selected": "Печень утки разварная с артишоками.",
+        "finished": "Печалька, с фуа-гра закончился."
+      }
+    },
+
+    {
+      "taste": "с рыбой",
+      "weight": {
+        "value": 2,
+        "units": "kg"
+      },
+      "quantity": {
+        "value": 40,
+        "units": "portion"
+      },
+      "gift": {
+        "value": 2,
+        "units": "mouse"
+      },
+      "temptation": {
+        "selected": "Головы щучьи с чесноком да свежайшя сёмгушка.",
+        "finished": "Печалька, с рыбой закончился."
+      }
+    },
+
+    {
+      "taste": "с курой",
+      "weight": {
+        "value": 5,
+        "units": "kg"
+      },
+      "quantity": {
+        "value": 100,
+        "units": "portion"
+      },
+      "gift": {
+        "value": 5,
+        "units": "mouse"
+      },
+      "isClientHappy": true,
+      "temptation": {
+        "selected": "Филе из цыплят с трюфелями в бульоне.",
+        "finished": "Печалька, с курой закончился."
+      }
+    }
+  ]
+}
