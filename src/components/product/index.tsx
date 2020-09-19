@@ -119,6 +119,10 @@ function Product({
   }
 
   function onCardHover() {
+    if (isDisabled) {
+      return;
+    }
+
     setHover(true);
   }
 
@@ -170,6 +174,21 @@ function Product({
 
   return (
     <div className={productClassName}>
+      {/*
+        По клику дизейблится карточка
+        Сделано для удобной проверки состояния
+      */}
+      <button
+        className="product__disable-btn"
+        type="button"
+        onClick={() => {
+          setDisabled(!isDisabled);
+        }}
+        title="Задизейблить продукт"
+      >
+        <span className="visually-hidden">Задизейблить продукт</span>
+      </button>
+
       <input
         className="product__input visually-hidden"
         type="checkbox"
@@ -197,16 +216,8 @@ function Product({
         onMouseOver={onCardHover}
       >
         <div className="product__card-inner">
-          {/*
-          По клику на описание карточка дизейблится
-          Сделано для удобной проверки состояния
-          */}
-          <div
-            className="product__desc"
-            onClick={() => {
-              setDisabled(!isDisabled);
-            }}
-          >{descText}</div>
+
+          <div className="product__desc">{descText}</div>
 
           <h2 className="product__title">
             {title}
