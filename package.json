@@ -18,8 +18,8 @@
     "build": "react-scripts build",
     "lint": "npm run js:lint && npm run css:lint",
     "lint:fix": "npm run js:fix && npm run css:fix",
-    "js:lint": "eslint src --ext .ts,.js",
-    "js:fix": "eslint src --ext .ts,.js --fix",
+    "js:lint": "eslint src --ext .ts,.tsx,.js",
+    "js:fix": "eslint src --ext .ts,.tsx,.js --fix",
     "css:lint": "stylelint **/*.scss",
     "css:fix": "stylelint **/*.scss --fix",
     "deploy": "npm run build && gh-pages -d build"
@@ -42,7 +42,11 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "eslint-config-standard": "^14.1.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",

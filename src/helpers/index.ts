@@ -63,7 +63,7 @@ export const addUnitsText = (params: IaddUnitsText): valueWithUnits => {
     return {
       ...params,
       unitsText: text
-    }; ;
+    };
   }
 
   return {

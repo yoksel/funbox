@@ -3,29 +3,19 @@ import { getClassName, formatWeight } from '../../helpers';
 
 import data from '../../data.json';
 import './styles.scss';
-
 interface IProduct {
-  id: string,
-  title: string,
-  taste: string,
-  quantity: valueWithUnits,
-  gift: valueWithUnits,
-  weight: valueWithUnits,
-  temptation: { selected: string, finished: string },
-  isClientHappy: boolean | undefined
+  id: string;
+  title: string;
+  taste: string;
+  quantity: valueWithUnits;
+  gift: valueWithUnits;
+  weight: valueWithUnits;
+  temptation: { selected: string, finished: string };
+  isClientHappy: boolean | undefined;
 }
 
-function Product({
-  id,
-  title,
-  taste,
-  gift,
-  quantity,
-  weight,
-  temptation,
-  isClientHappy
-}: IProduct) {
-  const inputId: string = `product-${id}`;
+function Product ({ id, title, taste, gift, quantity, weight, temptation, isClientHappy }: IProduct): JSX.Element {
+  const inputId = `product-${id}`;
   const [isChecked, setChecked] = useState(false);
   const [isDisabled, setDisabled] = useState(false);
   const [isLeaved, setLeaved] = useState(false);
@@ -36,20 +26,64 @@ function Product({
   const temptationElement = getTemptationElement();
   const descText = getDesc();
 
-  function getMods() {
+  function getMods (): Array<string> {
     const mods = [];
 
     if (isChecked) {
-      mods.push('checked')
+      mods.push('checked');
     }
     if (isDisabled) {
-      mods.push('disabled')
+      mods.push('disabled');
     }
 
     return mods;
   }
 
-  function getTemptationElement() {
+  function onInputChange (event: React.FormEvent<HTMLInputElement>): void {
+    const isInputChecked = event.currentTarget.checked;
+    setChecked(isInputChecked);
+
+    if (!isInputChecked) {
+      setLeaved(false);
+    }
+  }
+
+  function onCardClick (): void {
+    if (isDisabled) {
+      return;
+    }
+
+    if (!isChecked) {
+      setLeaved(false);
+    }
+
+    setChecked(!isChecked);
+  }
+
+  function onCardLeave (): void {
+    setHover(false);
+
+    if (!isChecked) {
+      setLeaved(false);
+      return;
+    }
+
+    setLeaved(true);
+  }
+
+  function onCardHover (): void {
+    if (isDisabled) {
+      return;
+    }
+
+    setHover(true);
+  }
+
+  function onDisableButtonClick (): void {
+    setDisabled(!isDisabled);
+  }
+
+  function getTemptationElement (): JSX.Element {
     let text = data.common.temptation;
     let actionBtn = null;
 
@@ -67,7 +101,7 @@ function Product({
         className="product__temptation-button"
         onClick={onCardClick}
         type="button">{data.common.temptationActionText}</button>
-      </Fragment>
+      </Fragment>;
     }
 
     return (
@@ -75,10 +109,10 @@ function Product({
         {text}
         {actionBtn}
       </div>
-    )
+    );
   }
 
-  function getDesc() {
+  function getDesc (): string {
     if (isChecked && isLeaved && isHover) {
       return data.common.descSelectedHover;
     }
@@ -86,47 +120,7 @@ function Product({
     return data.common.desc;
   }
 
-  function onInputChange(event: React.FormEvent<HTMLInputElement>) {
-    const isInputChecked = event.currentTarget.checked;
-    setChecked(isInputChecked);
-
-    if (!isInputChecked) {
-      setLeaved(false);
-    }
-  }
-
-  function onCardClick () {
-    if (isDisabled) {
-      return;
-    }
-
-    if (!isChecked) {
-      setLeaved(false);
-    }
-
-    setChecked(!isChecked);
-  }
-
-  function onCardLeave () {
-    setHover(false);
-
-    if (!isChecked) {
-      setLeaved(false);
-      return;
-    }
-
-    setLeaved(true);
-  }
-
-  function onCardHover() {
-    if (isDisabled) {
-      return;
-    }
-
-    setHover(true);
-  }
-
-  function getFeaturesItems() {
+  function getFeaturesItems (): JSX.Element[] {
     const dataItems = [
       quantity,
       {
@@ -135,11 +129,11 @@ function Product({
       }
     ];
 
-    if(isClientHappy) {
+    if (isClientHappy) {
       dataItems.push({ text: data.common.clientHappy });
     }
 
-    let items = dataItems.map(({ value, unitsText, text }, index) => {
+    const items: JSX.Element[] = dataItems.map(({ value, unitsText, text }, index) => {
       let valueElement;
       const id = `feature-${index}`;
 
@@ -152,7 +146,7 @@ function Product({
       }
 
       if (unitsText && text) {
-        unitsText += ' '
+        unitsText += ' ';
       }
 
       return (
@@ -166,13 +160,13 @@ function Product({
 
           {text}
         </li>
-      )
-    })
+      );
+    });
 
     return items;
   }
 
-  function getLabelText() {
+  function getLabelText (): string {
     return `
       ${getDesc()}.
 
@@ -198,9 +192,7 @@ function Product({
       <button
         className="product__disable-btn"
         type="button"
-        onClick={() => {
-          setDisabled(!isDisabled);
-        }}
+        onClick={onDisableButtonClick}
         title="Задизейблить продукт"
       >
         <span className="visually-hidden">Задизейблить продукт</span>

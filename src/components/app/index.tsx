@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Card from '../product'
+import Card from '../product';
 import { addUnitsText } from '../../helpers';
 
 import data from '../../data.json';
 import './styles.scss';
 
-function App() {
+function App (): JSX.Element {
   const cards = data.items.map(item => {
     const { id, taste, gift, weight, quantity, temptation, isClientHappy } = item;
 
@@ -22,7 +22,7 @@ function App() {
         temptation={temptation}
         isClientHappy={isClientHappy}
       />
-    )
+    );
   });
 
   return (
