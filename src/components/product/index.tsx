@@ -172,6 +172,23 @@ function Product({
     return items;
   }
 
+  function getLabelText() {
+    return `
+      ${getDesc()}.
+
+      ${title} ${taste},
+      ${weight.value}
+      ${weight.unitsText}.
+
+      ${quantity.value}
+      ${quantity.unitsText},
+
+      ${gift.value}
+      ${gift.unitsText}
+      в подарок.
+    `;
+  }
+
   return (
     <div className={productClassName}>
       {/*
@@ -205,7 +222,10 @@ function Product({
       удобной стилизации для обычных пользователей
       */}
       <label
-        className="visually-hidden">{`${data.common.desc}. ${title} ${{ taste }}`}
+        htmlFor={inputId}
+        className="visually-hidden"
+      >
+        {getLabelText()}
       </label>
 
       <div

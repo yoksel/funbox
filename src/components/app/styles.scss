@@ -7,10 +7,9 @@
 .app {
   min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
   padding-top: 40px;
   box-sizing: border-box;
   background-color: #000;
@@ -31,4 +30,18 @@
   text-align: center;
   font: 36px/1 Exo, Arial, sans-serif;
   color: #FFF;
+}
+
+.app__group {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.app__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

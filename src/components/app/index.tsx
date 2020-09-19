@@ -28,7 +28,13 @@ function App() {
   return (
     <div className="app">
       <h1 className="app__title">Ты сегодня покормил кота?</h1>
-      {cards}
+
+      <fieldset className="app__group">
+        <legend className="visually-hidden">Выберите корм</legend>
+
+        <div className="app__cards">{cards}</div>
+      </fieldset>
+
     </div>
   );
 }
