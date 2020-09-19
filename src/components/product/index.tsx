@@ -35,6 +35,9 @@ function Product ({ id, title, taste, gift, quantity, weight, temptation, isClie
     if (isDisabled) {
       mods.push('disabled');
     }
+    if (isLeaved) {
+      mods.push('leaved');
+    }
 
     return mods;
   }

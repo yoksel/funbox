@@ -162,6 +162,10 @@ $color-white: #FFF;
   .product__card--disabled & {
     color: $color-gray-disabled;
   }
+
+  .product__card--checked.product__card--leaved:hover & {
+    color: $color-red-hover;
+  }
 }
 
 .product__title {
