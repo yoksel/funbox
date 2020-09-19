@@ -18,6 +18,7 @@
     {
       "id": "fua",
       "taste": "с фуа-гра",
+      "disabled": false,
       "weight": {
         "value": 0.5,
         "units": "kg"
@@ -31,14 +32,14 @@
         "units": "mouse"
       },
       "temptation": {
-        "selected": "Печень утки разварная с артишоками.",
-        "finished": "Печалька, с фуа-гра закончился."
+        "selected": "Печень утки разварная с артишоками."
       }
     },
 
     {
       "id": "fish",
       "taste": "с рыбой",
+      "disabled": false,
       "weight": {
         "value": 2,
         "units": "kg"
@@ -52,14 +53,14 @@
         "units": "mouse"
       },
       "temptation": {
-        "selected": "Головы щучьи с чесноком да свежайшя сёмгушка.",
-        "finished": "Печалька, с рыбой закончился."
+        "selected": "Головы щучьи с чесноком да свежайшая сёмгушка."
       }
     },
 
     {
       "id": "chicken",
       "taste": "с курой",
+      "disabled": false,
       "weight": {
         "value": 5,
         "units": "kg"
@@ -74,8 +75,7 @@
       },
       "isClientHappy": true,
       "temptation": {
-        "selected": "Филе из цыплят с трюфелями в бульоне.",
-        "finished": "Печалька, с курой закончился."
+        "selected": "Филе из цыплят с трюфелями в бульоне."
       }
     }
   ]

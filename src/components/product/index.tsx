@@ -7,17 +7,18 @@ interface IProduct {
   id: string;
   title: string;
   taste: string;
+  disabled: boolean;
   quantity: valueWithUnits;
   gift: valueWithUnits;
   weight: valueWithUnits;
-  temptation: { selected: string, finished: string };
+  temptation: { selected: string };
   isClientHappy: boolean | undefined;
 }
 
-function Product ({ id, title, taste, gift, quantity, weight, temptation, isClientHappy }: IProduct): JSX.Element {
+function Product ({ id, title, taste, disabled, gift, quantity, weight, temptation, isClientHappy }: IProduct): JSX.Element {
   const inputId = `product-${id}`;
   const [isChecked, setChecked] = useState(false);
-  const [isDisabled, setDisabled] = useState(false);
+  const [isDisabled, setDisabled] = useState(disabled);
   const [isLeaved, setLeaved] = useState(false);
   const [isHover, setHover] = useState(false);
   const mods = getMods();
@@ -91,7 +92,7 @@ function Product ({ id, title, taste, gift, quantity, weight, temptation, isClie
     let actionBtn = null;
 
     if (isDisabled) {
-      text = temptation.finished;
+      text = `Печалька, ${taste} закончился`;
     }
 
     if (isChecked) {

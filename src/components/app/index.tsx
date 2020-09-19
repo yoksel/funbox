@@ -8,7 +8,7 @@ import './styles.scss';
 
 function App (): JSX.Element {
   const cards = data.items.map(item => {
-    const { id, taste, gift, weight, quantity, temptation, isClientHappy } = item;
+    const { id, taste, disabled, gift, weight, quantity, temptation, isClientHappy } = item;
 
     return (
       <Card
@@ -16,6 +16,7 @@ function App (): JSX.Element {
         key={id}
         title={data.common.name}
         taste={taste}
+        disabled={disabled}
         gift={addUnitsText(gift)}
         weight={addUnitsText(weight)}
         quantity={addUnitsText(quantity)}
