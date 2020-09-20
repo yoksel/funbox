@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d5fdd9a89ad0b099191c09d4b9f2f516",
+    "revision": "cd6d18be217e34829ef4fc0dca1af8df",
     "url": "/funbox/index.html"
   },
   {
-    "revision": "7c205b0535ca1a0c9284",
-    "url": "/funbox/static/css/main.95b995f6.chunk.css"
+    "revision": "ded26a440ee4e96c402b",
+    "url": "/funbox/static/css/main.42de91c4.chunk.css"
   },
   {
     "revision": "90b5e2199c015b874c04",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/funbox/static/js/2.af416f4a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c205b0535ca1a0c9284",
+    "revision": "ded26a440ee4e96c402b",
     "url": "/funbox/static/js/main.f6eb70f9.chunk.js"
   },
   {
@@ -32,15 +32,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/funbox/static/media/Exo20-Thin.d45e4057.woff2"
   },
   {
-    "revision": "0f81ae46cc816216276f425380ef34e2",
-    "url": "/funbox/static/media/bg.0f81ae46.png"
+    "revision": "5151e2613f01059a876b0d7de7b3fb38",
+    "url": "/funbox/static/media/cat.5151e261.jpg"
   },
   {
-    "revision": "7babe635dfe01b6e26aff969da12aa6c",
-    "url": "/funbox/static/media/cat.7babe635.jpg"
-  },
-  {
-    "revision": "c3b0dce4cfcbb67e9ef6c5d7567d7b54",
-    "url": "/funbox/static/media/cat@2x.c3b0dce4.jpg"
+    "revision": "8c4ccefcec0ed620d25213536cb889f2",
+    "url": "/funbox/static/media/cat@2x.8c4ccefc.jpg"
   }
 ]);
