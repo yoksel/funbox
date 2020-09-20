@@ -8,6 +8,8 @@ $color-red-hover: #E52E7A;
 $color-yellow: #FFFF66;
 $color-white: #FFF;
 
+$shadow-focus: 0 0 0 3px transparentize($color-blue-hover, .45);
+
 // https://gist.github.com/certainlyakey/e9c0d8f5c87ff47e3d5b
 @function encodecolor($string) {
 	@if type-of($string) == 'color' {
@@ -61,26 +63,26 @@ $color-white: #FFF;
   height: 24px;
   border: 0;
   background: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 18'%3E%3Cg fill='%23FFF'%3E%3Cpath d='M20.29 3.807c2.498 2.213 3.733 4.724 3.733 4.724S20.105 16.5 12.012 16.5c-1.907 0-3.548-.364-4.948-.938l2.822-2.507c.64.286 1.363.445 2.144.445 2.902 0 5-2.188 5-5a5.32 5.32 0 00-.237-1.585zM12.013.5c1.812 0 3.416.406 4.815 1.035l-2.693 2.393A5.227 5.227 0 0012.03 3.5c-2.902 0-5 2.187-5 5 0 .541.078 1.06.224 1.543l-3.722 3.308C1.004 11.112 0 8.5 0 8.5s4.075-8 12.012-8zm3.017 7.982l.001.018c0 1.605-1.342 3-3 3-.125 0-.248-.008-.368-.023l3.367-2.995zM12.03 5.5c.107 0 .212.005.316.017L9.03 8.464c.02-1.592 1.354-2.961 3-2.964z'/%3E%3Cpath d='M20.668.126a.5.5 0 01.726.682l-.062.066-18 16a.5.5 0 01-.726-.682l.062-.066 18-16z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 18'%3E%3Cg fill='%23FFF' fill-opacity='.5'%3E%3Cpath d='M20.29 3.807c2.498 2.213 3.733 4.724 3.733 4.724S20.105 16.5 12.012 16.5c-1.907 0-3.548-.364-4.948-.938l2.822-2.507c.64.286 1.363.445 2.144.445 2.902 0 5-2.188 5-5a5.32 5.32 0 00-.237-1.585zM12.013.5c1.812 0 3.416.406 4.815 1.035l-2.693 2.393A5.227 5.227 0 0012.03 3.5c-2.902 0-5 2.187-5 5 0 .541.078 1.06.224 1.543l-3.722 3.308C1.004 11.112 0 8.5 0 8.5s4.075-8 12.012-8zm3.017 7.982l.001.018c0 1.605-1.342 3-3 3-.125 0-.248-.008-.368-.023l3.367-2.995zM12.03 5.5c.107 0 .212.005.316.017L9.03 8.464c.02-1.592 1.354-2.961 3-2.964z'/%3E%3Cpath d='M20.668.126a.5.5 0 01.726.682l-.062.066-18 16a.5.5 0 01-.726-.682l.062-.066 18-16z'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 20px 15px;
   border-radius: 50%;
-  outline: none;
   opacity: 0;
   cursor: pointer;
 
   .product--disabled & {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFF' d='M12.012 0C4.075 0 0 8 0 8s3.075 8 12.012 8c8.093 0 12.011-7.969 12.011-7.969S20.074 0 12.012 0zm.018 13c-2.902 0-5-2.188-5-5 0-2.813 2.098-5 5-5s5 2.187 5 5c0 2.812-2.098 5-5 5zm0-8c-1.658.003-3 1.393-3 3 0 1.606 1.342 3 3 3s3-1.395 3-3c0-1.608-1.342-3.003-3-3z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFF' fill-opacity='.5' d='M12.012 0C4.075 0 0 8 0 8s3.075 8 12.012 8c8.093 0 12.011-7.969 12.011-7.969S20.074 0 12.012 0zm.018 13c-2.902 0-5-2.188-5-5 0-2.813 2.098-5 5-5s5 2.187 5 5c0 2.812-2.098 5-5 5zm0-8c-1.658.003-3 1.393-3 3 0 1.606 1.342 3 3 3s3-1.395 3-3c0-1.608-1.342-3.003-3-3z'/%3E%3C/svg%3E");
   }
 
   &:hover {
-    opacity: .75;
+    opacity: 1;
   }
 
   &:focus {
-    opacity: .75;
-    box-shadow: 0 0 0 3px $color-blue-hover;
+    opacity: 1;
+    outline: none;
+    box-shadow: $shadow-focus;
   }
 }
 
@@ -160,11 +162,11 @@ $color-white: #FFF;
 
 .product__input:focus ~ .product__card::before {
   @include card-border-image-with-gradient($color-red-hover, $color-blue-hover);
-  filter: drop-shadow(-5px -5px 10px hsla(335, 90%, 37%, .85)) drop-shadow(5px 5px 10px hsla(200, 90%, 40%, .85));
+  filter: drop-shadow(-5px -5px 10px hsla(335, 90%, 37%, .85)) drop-shadow(5px 5px 10px hsla(205, 100%, 40%, .85));
 }
 .product__input:checked:focus ~ .product__card::before {
   @include card-border-image-with-gradient($color-blue-hover, $color-red-hover);
-  filter: drop-shadow(5px 5px 10px hsla(335, 90%, 37%, .85)) drop-shadow(-5px -5px 10px hsla(200, 90%, 40%, .85));
+  filter: drop-shadow(5px 5px 10px hsla(335, 90%, 37%, .85)) drop-shadow(-5px -5px 10px hsla(205, 100%, 40%, .85));
 }
 
 .product__card-inner {
@@ -296,6 +298,7 @@ $color-white: #FFF;
   font: inherit;
   font-weight: bold;
   line-height: 1.1;
+  outline: none;
   color: $color-blue-base;
   cursor: pointer;
 
@@ -303,13 +306,18 @@ $color-white: #FFF;
     content: '';
     position: absolute;
     z-index: -1;
-    top: -.5em;
-    right: -.5em;
-    bottom: -.5em;
-    left: -.5em;
+    top: -.65em;
+    right: -.15em;
+    bottom: -.65em;
+    left: -.15em;
+    border-radius: 4px;
   }
 
   &:hover {
     color: $color-blue-hover;
+  }
+
+  &:focus::before {
+    box-shadow: $shadow-focus;
   }
 }
